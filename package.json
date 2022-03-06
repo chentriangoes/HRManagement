@@ -1,0 +1,25 @@
+{
+  "name": "hrmanagement",
+  "version": "1.0.0",
+  "description": "An app storing information about employees for human resource management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chentriangoes/HRManagement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chentriangoes/HRManagement/issues"
+  },
+  "homepage": "https://github.com/chentriangoes/HRManagement#readme",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.3"
+  }
+}
