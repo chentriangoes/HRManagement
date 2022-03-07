@@ -8,12 +8,17 @@ module.exports = {
 			"View All Employees", // viewEmployee();
             "Add Employee", // addEmployee();
             "Update Employee Role", // updateEmployeeRole();
+			"Remove Employee", // removeEmployees();
 			"View ALL Roles", // viewRoles();
 			"Add Role", // addRole();
+			"Remove Role", // removeRole();
 			"View All Departments", // viewDepartments();
 			"Add Department", // addDepartment();
+			"Remove Department", // removeDepartment();
 			"View Employees by Manager", // viewEmployeeByManager();
 			"View Employees by Department", // viewEmployeeByDepartment();
+			"Update Employee Manager", // updateEmployeeManager();
+			"View Department Budget", // viewDepartmentBudget();
 			//EXIT
 			"Exit",
 		],
@@ -73,6 +78,18 @@ module.exports = {
 		},
 	],
 
+	// PROMPT REMOVE EMPLOYEE
+	deleteEmployeePrompt: (deleteEmployeeChoices) => [
+		// Select Employee to Remove
+		{
+			type: "list",
+			name: "employeeId",
+			message: "Which employee do you want to remove?",
+			choices: deleteEmployeeChoices,
+		},
+	],
+
+	
 	// PROMPT ADD ROLE
 	insertRole: (departmentChoices) => [
 		// Create New Role's Name
@@ -96,6 +113,17 @@ module.exports = {
 		},
 	],
 
+	// PROMPT REMOVE ROLE
+	deleteRolePrompt: (deleteRoleChoices) => [
+		// Select Role to Remove
+		{
+			type: "list",
+			name: "roleId",
+			message: "Which role do you want to remove?",
+			choices: deleteRoleChoices,
+		},
+	],
+
 	// PROMPT ADD DEPARTMENT
 	insertDepartment: {
 		// Create New Departments Name
@@ -103,6 +131,17 @@ module.exports = {
 		type: "input",
 		message: "What is the name of the new department?",
 	},
+
+	// PROMPT REMOVE DEPARTMENT
+	deleteDepartmentPrompt: (deleteDepartmentChoices) => [
+		// Select Department to Remove
+		{
+			type: "list",
+			name: "departmentId",
+			message: "Which department do you want to remove?",
+			choices: deleteDepartmentChoices,
+		},
+	],	
 
 	// PROMPT EMPLOYEE BY MANAGER
 	viewManagerPrompt: (managerChoices) => [
@@ -125,4 +164,22 @@ module.exports = {
 			choices: departmentChoices,
 		},
 	],
+
+		// PROMPT UPDATE MANAGER
+		updateManager: (employees) => [
+			// Select Employee to Update
+			{
+				name: "update",
+				type: "list",
+				message: "Choose the employee whose manager is to be updated:",
+				choices: employees,
+			},
+			// Select Employee's New Manager
+			{
+				name: "manager",
+				type: "list",
+				message: "Choose employee's new manager",
+				choices: employees,
+			},
+		],
 };
