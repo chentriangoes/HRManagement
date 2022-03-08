@@ -52,9 +52,6 @@ function firstPrompt() {
 			case "Update Employee Manager":
 				updateEmployeeManager();
 				break; // ⛔
-			case "View Department Budget":
-				viewDepartmentBudget();
-				break; // ⛔
             case "Exit":
                 console.log(
                     `\n“I'll see you to be back!"\n`,
@@ -456,7 +453,7 @@ function viewEmployeeByDepartment() {
 	});
 }
 
-/* === || VIEW EMPLOYEE BY MANAGER || === */
+// VIEW EMPLOYEE BY MANAGER
 function viewEmployeeByManager() {
 	console.log("Manager Rota:\n");
 
@@ -539,26 +536,3 @@ const updateEmployeeManager = () => {
 		},
 	);
 };
-
-
-// VIEW DEPARTMENT BUDGET
-function viewDepartmentBudget() {
-	var query = `SELECT d.name, 
-		r.salary, sum(r.salary) AS budget
-		FROM employee e 
-		LEFT JOIN role r ON e.role_id = r.id
-		LEFT JOIN department d ON r.department_id = d.id
-		group by d.name`;
-
-	connection.query(query, function (err, res) {
-		if (err) throw err;
-
-		console.log(`\nDEPARTMENT BUDGETS:\n`);
-		res.forEach((department) => {
-			console.log(
-				`Department: ${department.name}\n Budget: ${department.budget}\n`,
-			);
-		});
-		firstPrompt();
-	});
-}

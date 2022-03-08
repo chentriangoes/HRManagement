@@ -18,7 +18,6 @@ module.exports = {
 			"View Employees by Manager", // viewEmployeeByManager();
 			"View Employees by Department", // viewEmployeeByDepartment();
 			"Update Employee Manager", // updateEmployeeManager();
-			"View Department Budget", // viewDepartmentBudget();
 			//EXIT
 			"Exit",
 		],
